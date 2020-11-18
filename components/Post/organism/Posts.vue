@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <PostContent :key="post.title" v-for="post in sortPost" :postData="post" />
+  <div class="posts-box">
+    <b-row>
+      <b-col :key="post.title" v-for="post in sortPost" cols="12" sm="6" md="4">
+        <PostContent :postData="post" />
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -27,4 +31,4 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

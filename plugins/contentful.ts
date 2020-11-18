@@ -2,13 +2,6 @@ import { Entry, EntryCollection, Asset } from '@/node_modules/contentful'
 const contentful = require('contentful')
 import { Plugin } from '@nuxt/types'
 
-export const createClient = () => {
-  return contentful.createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  })
-}
-
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,

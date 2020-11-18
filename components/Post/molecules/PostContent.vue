@@ -1,11 +1,16 @@
 <template>
-  <div>
-    <h1 class="title">{{ postData.title }}</h1>
-    <p class="time-display">
-      {{ $dayjs(postData.createdAt).format('YYYY/MM/DD') }}
-    </p>
+  <article class="post-wrapper">
+    <div>
+      <h2 class="title">{{ postData.title }}</h2>
+    </div>
+
     <div v-html="toHtmlString(postData.content)"></div>
-  </div>
+    <div>
+      <p class="time-display">
+        {{ $dayjs(postData.createdAt).format('YYYY/MM/DD') }}
+      </p>
+    </div>
+  </article>
 </template>
 
 <script lang="ts">
@@ -26,12 +31,19 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .title {
   font-size: 2rem;
   font-weight: bold;
 }
 .time-display {
-  font-size: 1.3rem;
+  font-size: 0.8rem;
+  text-align: right;
+  margin: 0;
+}
+.post-wrapper {
+  padding: 1rem;
+  background-color: $secondaryBackgroundColor;
+  border-radius: 1rem;
 }
 </style>
